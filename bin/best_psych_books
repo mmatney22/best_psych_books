@@ -2,4 +2,4 @@
 
 require_relative '../lib/environment'
 
-puts "hello"
+PsychBooks::CLI.new.call
