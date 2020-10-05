@@ -12,7 +12,7 @@ class PsychBooks::Scraper
     
     books.each do |book|               #make books
       title = book.css("a.bookTitle span").text
-      url = book.css("a").first.attr("href")
+      url = book.css("a.bookTitle").attr("href")
       PsychBooks::Book.new(title, url)
     end
   end

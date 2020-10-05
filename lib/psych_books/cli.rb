@@ -13,7 +13,7 @@ class PsychBooks::CLI
   
   def list_books
     puts "Choose a book to see more information:"
-    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.name}"}    #iterates over array, and lists books
+    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}"}    #iterates over array, and lists books
   end
   
   def get_user_book
