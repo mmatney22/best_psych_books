@@ -20,7 +20,7 @@ class PsychBooks::Scraper
   def self.scrape_book_details(book)
     basepath = "https://www.goodreads.com/"
     doc = Nokogiri::HTML(open("#{basepath + book.url}"))
-    author= doc.css("   ").text
+    author= doc.css("a.authorName span").text
     description = doc.css(" ").text.strip
     rating = 
     book.author = author
