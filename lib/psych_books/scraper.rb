@@ -12,6 +12,7 @@ class PsychBooks::Scraper
     
     books.each do |book|               #make farms
       title = book.css("span").text
+      url = book.css("")
       PsychBooks::Book.new(title, url)
     end
   end
