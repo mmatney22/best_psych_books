@@ -10,16 +10,16 @@ class PsychBooks::Scraper
     
     books = doc.css("a.bookTitle")
     
-    books.each do |book|               #make farms
+    books.each do |book|               #make books
       title = book.css("span").text
-      url = book.css("")
+      url = book.css("a").first.attr("href")
       PsychBooks::Book.new(title, url)
     end
   end
   
   def self.scrape_book_details(book)
     basepath = "http://newenglandfallevents.com/massachusetts/pumpkin-patches/"
-    doc = Nokogiri::HTML(open("#{basepath + farm.url}"))
+    doc = Nokogiri::HTML(open("#{basepath + book.url}"))
     address= doc.css("div.authorName__container a span").text
     phone = doc.css("div.readable.stacked.gcaBookDescription").text.strip
     farm.address = address
