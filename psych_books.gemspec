@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "RubyGem allowing users to view and choose best psychology books."
   spec.description   = %q{CLI that allows user to find more information about Goodreads best psych books.}
-  spec.homepage      = "http://github.com:mmatney22/best_psych_books.git"
+  spec.homepage      = "http://github.com/mmatney22/best_psych_books.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "http://github.com:mmatney22/best_psych_books.git"
-    spec.metadata["changelog_uri"] = "http://github.com:mmatney22/best_psych_books.git"
+    spec.metadata["source_code_uri"] = "http://github.com/mmatney22/best_psych_books.git"
+    spec.metadata["changelog_uri"] = "http://github.com/mmatney22/best_psych_books.git"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
