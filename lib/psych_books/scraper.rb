@@ -8,10 +8,10 @@ class PsychBooks::Scraper
   def self.scrape_books
     doc = Nokogiri::HTML(open("https://www.goodreads.com/list/show/1295.Greatest_Psychology_Books")) 
     
-    books = doc.css("a.bookTitle")
+    books = doc.css("tr td")
     
     books.each do |book|               #make books
-      title = book.css("span").text
+      title = book.css("a.bookTitle span").text
       url = book.css("a").first.attr("href")
       PsychBooks::Book.new(title, url)
     end
