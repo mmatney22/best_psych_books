@@ -1,5 +1,5 @@
 class PsychBooks::Book
-  attr_accessor :title, :author, :url, :author, :description, :rating
+  attr_accessor :title, :author, :url, :author, :description, :rating, :page_count
   @@all =[]
   
   def initialize(title=nil, url=nil)
