@@ -28,7 +28,7 @@ class PsychBooks::CLI
   def list_info_for(chosen_book)
     book = @books[chosen_book - 1] 
     PsychBooks::Scraper.scrape_book_details(book)   #set variable to array item of @books, minus 1 for correct index
-    puts "Here are the details for #{book.title}:".green
+    puts "\nHere are the details for #{book.title}:\n".green
     puts "\nAuthor:".yellow.bold + " #{book.author}\n".cyan
     puts "\nDescription:".yellow.bold + " #{book.description}\n".cyan
     puts "\nPage count:".yellow.bold + " #{book.page_count}\n".cyan
