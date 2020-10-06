@@ -40,13 +40,14 @@ class PsychBooks::CLI
     puts "Type 'books' to see the list of books again."
     puts "Type 'exit' to exit."
     puts ""
+    input = gets.strip.downcase
     menu_decision(input)
   end
   
   def menu_decision(input)
-    input = gets.strip downcase
     if input == "books"
       list_books
+      get_user_book
     elsif input == "exit"
       puts "Thank you for choosing Goodreads! Happy reading!"
     else
