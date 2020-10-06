@@ -38,8 +38,7 @@ class PsychBooks::CLI
   
   def menu
     puts "Type 'books' to see the list of books again.".green
-    puts "Type 'exit' to exit.".green
-    puts ""
+    puts "\nType 'exit' to exit.\n".green
     input = gets.strip.downcase
     menu_decision(input)
   end
