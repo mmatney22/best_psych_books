@@ -20,12 +20,18 @@ class PsychBooks::CLI
   end
   
   def get_user_book
-    chosen_book = gets.strip.to_i
-    list_info_for(chosen_book) if valid_input?(chosen_book, @books)        
+    chosen_book = gets.strip.to_i 
+    if valid_input?(chosen_book, @books)
+      list_info_for(chosen_book)
+    else
+      puts "\nI'm not quite sure I understand. Please try again.\n".green 
+      # list_books
+      get_user_book
+    end
   end
   
   def valid_input?(input, data)
-    input.to_i <= data.length && input.to_i > 0        
+    input.to_i <= data.length && input.to_i > 0     
   end
   
   def list_info_for(chosen_book)

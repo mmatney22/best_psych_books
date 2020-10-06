@@ -29,5 +29,4 @@ class PsychBooks::Scraper
     book.rating = rating
     book.page_count = page_count
   end
-  
 end
