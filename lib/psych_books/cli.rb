@@ -27,11 +27,11 @@ class PsychBooks::CLI
   
   def list_info_for(chosen_book)
     book = @books[chosen_book - 1] 
-    book.get_details                              #set variable to array item of @books, minus 1 for correct index
+    PsychBooks::Scraper.scrape_book_details(book)   #set variable to array item of @books, minus 1 for correct index
     puts "Here are the details for #{book.title}:"
-    book.info.each.with_index(1) do |info, index|       #go thru all books and lists info
-      puts "#{index}. #{info.name}"
-    end
+    puts "Author: #{book.author}"
+    puts "Description: #{book.description}"
+    puts "Rating: #{book.rating}"
   end
   
 end

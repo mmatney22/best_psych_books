@@ -1,5 +1,5 @@
 class PsychBooks::Book
-  attr_accessor :title, :author, :url, :author, :description
+  attr_accessor :title, :author, :url, :author, :description, :rating
   @@all =[]
   
   def initialize(title=nil, url=nil)
@@ -14,7 +14,7 @@ class PsychBooks::Book
   end
   
   def self.get_details
-    PsychBooks::Scraper.scrape_book_details
+    PsychBooks::Scraper.scrape_book_details(book)
   end
   
   def save
