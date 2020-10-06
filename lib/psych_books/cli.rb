@@ -25,7 +25,6 @@ class PsychBooks::CLI
       list_info_for(chosen_book)
     else
       puts "\nI'm not quite sure I understand. Please try again.\n".green 
-      # list_books
       get_user_book
     end
   end
