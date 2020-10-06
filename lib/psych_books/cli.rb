@@ -1,7 +1,7 @@
 class PsychBooks::CLI
 
   def call 
-    puts "\nWelcome to Goodreads Best Psychology Books!\n".blue
+    puts "\nWelcome to Goodreads Best Psychology Books!\n".green
     get_books
     list_books
     get_user_book
@@ -12,7 +12,7 @@ class PsychBooks::CLI
   end
   
   def list_books
-    puts "Choose a book to see more information:".blue
+    puts "Choose a book to see more information:".green
     @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}"}     #iterates and lists books
   end
   
@@ -28,18 +28,18 @@ class PsychBooks::CLI
   def list_info_for(chosen_book)
     book = @books[chosen_book - 1] 
     PsychBooks::Scraper.scrape_book_details(book)   #set variable to array item of @books, minus 1 for correct index
-    puts "Here are the details for #{book.title}:".blue
-    puts "Author:".light green "#{book.author}".light_green
-    puts "Description: #{book.description}".light_green
-    puts "Rating: #{book.rating}".light_green
-    puts "Page count: #{book.page_count}".light_green
+    puts "Here are the details for #{book.title}:".cyan
+    puts "Author: #{book.author}".cyan
+    puts "Description: #{book.description}".cyan
+    puts "Page count: #{book.page_count}".cyan
+    puts "Rating: #{book.rating}".cyan
     puts ""
     menu
   end
   
   def menu
-    puts "Type 'books' to see the list of books again.".blue
-    puts "Type 'exit' to exit.".blue
+    puts "Type 'books' to see the list of books again.".green
+    puts "Type 'exit' to exit.".green
     puts ""
     input = gets.strip.downcase
     menu_decision(input)
@@ -50,9 +50,9 @@ class PsychBooks::CLI
       list_books
       get_user_book
     elsif input == "exit"
-      puts "Thank you for choosing Goodreads! Happy reading!".blue
+      puts "Thank you for choosing Goodreads! Happy reading!".green
     else
-      puts "I'm not quite sure I understand. Please try again.".blue
+      puts "I'm not quite sure I understand. Please try again.".green
       menu
     end
   end
