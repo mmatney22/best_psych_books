@@ -12,8 +12,8 @@ class PsychBooks::CLI
   end
   
   def list_books
-    puts "Choose a book to see more information:".green
-    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}"}     #iterates and lists books
+    puts "\nChoose a book to see more information:\n".green
+    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}".cyan}     #iterates and lists books
   end
   
   def get_user_book
@@ -28,12 +28,11 @@ class PsychBooks::CLI
   def list_info_for(chosen_book)
     book = @books[chosen_book - 1] 
     PsychBooks::Scraper.scrape_book_details(book)   #set variable to array item of @books, minus 1 for correct index
-    puts "Here are the details for #{book.title}:".cyan
-    puts "Author: #{book.author}".cyan
-    puts "Description: #{book.description}".cyan
-    puts "Page count: #{book.page_count}".cyan
-    puts "Rating: #{book.rating}".cyan
-    puts ""
+    puts "Here are the details for #{book.title}:".green
+    puts "\nAuthor: #{book.author}\n".cyan
+    puts "\nDescription: #{book.description}\n".cyan
+    puts "\nPage count: #{book.page_count}\n".cyan
+    puts "\nRating: #{book.rating}\n".cyan
     menu
   end
   
@@ -50,9 +49,9 @@ class PsychBooks::CLI
       list_books
       get_user_book
     elsif input == "exit"
-      puts "Thank you for choosing Goodreads! Happy reading!".green
+      puts "\nThank you for choosing Goodreads! Happy reading!\n".green
     else
-      puts "I'm not quite sure I understand. Please try again.".green
+      puts "\nI'm not quite sure I understand. Please try again.\n".green
       menu
     end
   end
