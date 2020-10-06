@@ -22,7 +22,7 @@ class PsychBooks::Scraper
     doc = Nokogiri::HTML(open("#{basepath + book.url}"))
     author= doc.css("a.authorName span").text
     description = doc.css("div#description span").text.strip
-    rating = doc.css("div#bookMeta span").text
+    rating = doc.css("div#bookMeta span").text.strip
     book.author = author
     book.description = description
     book.rating = rating
