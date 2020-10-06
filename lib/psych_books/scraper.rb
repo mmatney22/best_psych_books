@@ -10,8 +10,8 @@ class PsychBooks::Scraper
     
     books = doc.css("div.left")
     
-    books.each do |book|               #make books
-      title = book.css("a.bookTitle").text
+    books.each do |book|               
+      title = book.css("a.bookTitle").text.chomp("(Hardcover)").chomp("(Paperback)")
       url = book.css("a").attr("href").value
       PsychBooks::Book.new(title, url)
     end
