@@ -32,6 +32,26 @@ class PsychBooks::CLI
     puts "Author: #{book.author}"
     puts "Description: #{book.description}"
     puts "Rating: #{book.rating}"
+    puts ""
+    menu
   end
   
+  def menu
+    puts "Type 'books' to see the list of books again."
+    puts "Type 'exit' to exit."
+    puts ""
+    menu_decision(input)
+  end
+  
+  def menu_decision(input)
+    input = gets.strip downcase
+    if input == "books"
+      list_books
+    elsif input == "exit"
+      puts "Thank you for choosing Goodreads! Happy reading!"
+    else
+      puts "I'm not quite sure I understand. Please try again."
+      menu
+    end
+  end
 end
