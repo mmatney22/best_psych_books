@@ -6,6 +6,7 @@ require_relative "./psych_books/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module PsychBooks
   class Error < StandardError; end

@@ -1,7 +1,7 @@
 class PsychBooks::CLI
 
   def call 
-    puts "\nWelcome to Goodreads Best Psychology Books!\n"
+    puts "\nWelcome to Goodreads Best Psychology Books!\n".blue
     get_books
     list_books
     get_user_book
@@ -12,8 +12,8 @@ class PsychBooks::CLI
   end
   
   def list_books
-    puts "Choose a book to see more information:"
-    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}"}    #iterates over array, and lists books
+    puts "Choose a book to see more information:".blue
+    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}"}     #iterates and lists books
   end
   
   def get_user_book
@@ -28,10 +28,10 @@ class PsychBooks::CLI
   def list_info_for(chosen_book)
     book = @books[chosen_book - 1] 
     PsychBooks::Scraper.scrape_book_details(book)   #set variable to array item of @books, minus 1 for correct index
-    puts "Here are the details for #{book.title}:"
-    puts "Author: #{book.author}"
-    puts "Description: #{book.description}"
-    puts "Rating: #{book.rating}"
+    puts "Here are the details for #{book.title}:".blue
+    puts "Author: #{book.author}
+      Description: #{book.description}
+      ating: #{book.rating}"
     puts ""
     menu
   end
