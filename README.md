@@ -1,6 +1,6 @@
 # PsychBooks
 
-Find the best psychology books!
+This gem utilizes Goodreads Must Read Psychology Books and presents the user with a list of books to choose from. After making a selection, the user is provided further details about his/her chosen book, including: title, author, description, and rating. This gem utilizes data pulled from https://www.goodreads.com/shelf/show/must-read-psychology
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run CLI program with "./bin/best_psych_books". Menu options are included in CLI to provide user choices.
 
 ## Development
 
