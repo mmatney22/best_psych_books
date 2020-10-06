@@ -12,8 +12,11 @@ class PsychBooks::CLI
   end
   
   def list_books
+    puts "------------------------"
+    puts "  Greatest Psych Books  "
+    puts "------------------------"
+    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}".cyan}  
     puts "\nChoose a book to see more information:\n".green
-    @books.each.with_index(1) {|book, index| puts "#{index}. #{book.title}".cyan}     
   end
   
   def get_user_book
